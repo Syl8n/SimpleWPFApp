@@ -1,0 +1,85 @@
+﻿<Window x:Class="_301004212_Suh__ASS4.InputWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_301004212_Suh__ASS4"
+        mc:Ignorable="d"
+        Title="InputWindow" Height="550" Width="350" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="470"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Right" Margin="0,20,20,0" TextWrapping="Wrap" 
+                   Text="Title:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,50,20,0" TextWrapping="Wrap" 
+                   Text="FirstName:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,80,20,0" TextWrapping="Wrap" 
+                   Text="MiddleName:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,110,20,0" TextWrapping="Wrap" 
+                   Text="LastName:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,140,20,0" TextWrapping="Wrap" 
+                   Text="CompanyName:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,170,20,0" TextWrapping="Wrap" 
+                   Text="SalesPerson:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,200,20,0" TextWrapping="Wrap" 
+                   Text="EmailAddress:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,230,20,0" TextWrapping="Wrap" 
+                   Text="Phone:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,260,20,0" TextWrapping="Wrap" 
+                   Text="Password:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,290,20,0" TextWrapping="Wrap" 
+                   Text="AddressLine1:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,320,20,0" TextWrapping="Wrap" 
+                   Text="AddressLine2:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,350,20,0" TextWrapping="Wrap" 
+                   Text="City:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,380,20,0" TextWrapping="Wrap" 
+                   Text="CountryRegion:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,410,20,0" TextWrapping="Wrap" 
+                   Text="StateProvince:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,440,20,0" TextWrapping="Wrap" 
+                   Text="PostalCode:" VerticalAlignment="Top"/>
+
+        <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" 
+                  Width="60" ItemsSource="{Binding TitleList}" SelectedValue="{Binding InputForm.Title}"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="20,50,0,0" TextWrapping="Wrap" 
+                 Text="{Binding InputForm.FirstName}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="20,80,0,0" TextWrapping="Wrap" 
+                 Text="{Binding InputForm.MiddleName}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="20,110,0,0" TextWrapping="Wrap" 
+                 Text="{Binding InputForm.LastName}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="20,140,0,0" TextWrapping="Wrap" 
+                 Text="{Binding InputForm.CompanyName}" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="20,170,0,0" VerticalAlignment="Top" 
+                  Width="60" ItemsSource="{Binding SalesList}" SelectedValue="{Binding InputForm.SalesPerson}"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="20,200,0,0" TextWrapping="Wrap" 
+                 Text="{Binding InputForm.EmailAddress}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="20,230,0,0" TextWrapping="Wrap" 
+                 Text="{Binding InputForm.Phone}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="20,260,0,0" TextWrapping="Wrap" 
+                 Text="{Binding InputForm.Password}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="20,290,0,0" TextWrapping="Wrap" 
+                 Text="{Binding InputForm.AddressLine1}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="20,320,0,0" TextWrapping="Wrap" 
+                 Text="{Binding InputForm.AddressLine2}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="20,350,0,0" TextWrapping="Wrap" 
+                 Text="{Binding InputForm.City, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="20,380,0,0" VerticalAlignment="Top" Width="60"
+                  ItemsSource="{Binding CountryList}" SelectedValue="{Binding InputForm.CountryRegion}" SelectionChanged="Country_SelectionChanged"/>
+        <ComboBox x:Name="StateProvince" Grid.Column="1" HorizontalAlignment="Left" 
+                  Margin="20,410,0,0" VerticalAlignment="Top" Width="60"
+                  SelectedValue="{Binding InputForm.StateProvince}"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="20,440,0,0" TextWrapping="Wrap" 
+                 Text="{Binding InputForm.PostalCode}" VerticalAlignment="Top" Width="120"/>
+
+        <Button Content="Submit" Grid.Row="1" Grid.ColumnSpan="2"
+                Margin="0,10,0,0" VerticalAlignment="Top"
+                Click="Submit_Click" HorizontalAlignment="Center" Width="42"/>
+    </Grid>
+</Window>

@@ -1,0 +1,46 @@
+﻿<Window x:Class="_301004212_Suh__ASS4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_301004212_Suh__ASS4"
+        mc:Ignorable="d"
+        Title="HenrySuh_ASS#4" Height="300" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid HorizontalAlignment="Center" Width="600" Height="284" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+
+        <ListView x:Name="CustomerList" ItemsSource="{Binding Customer}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="30" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="Title" Width="40" DisplayMemberBinding="{Binding Title}"/>
+                    <GridViewColumn Header="FirstName" Width="100" DisplayMemberBinding="{Binding FirstName}"/>
+                    <GridViewColumn Header="LastName" Width="100" DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Header="Company" Width="90" DisplayMemberBinding="{Binding CompanyName}"/>
+                    <GridViewColumn Header="Address" Width="170" DisplayMemberBinding="{Binding Address}"/>
+                    <GridViewColumn Header="Country" Width="60" DisplayMemberBinding="{Binding Country}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Grid.Row="1" Content="Add" HorizontalAlignment="Left" Margin="19,10,0,0" VerticalAlignment="Top" Width="95"
+                Click="Add_Click"/>
+        <Button Grid.Row="1" Content="Edit" HorizontalAlignment="Left" Margin="134,10,0,0" VerticalAlignment="Top" Width="95"
+                Click="Edit_Click"/>
+        <Button Grid.Row="1" Content="Find" HorizontalAlignment="Left" Margin="19,43,0,0" VerticalAlignment="Top" Width="95"
+                Click="Find_Click"/>
+        <Button Grid.Row="1" Content="Delete" HorizontalAlignment="Left" Margin="134,43,0,0" VerticalAlignment="Top" Width="95"
+                Click="Delete_Click"/>
+        
+        <Button Content="Sort by First Name" HorizontalAlignment="Left" Margin="253,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="150"
+                Click="SortByFirstName_Click"/>
+        <Button Content="Sort by Company Name" HorizontalAlignment="Left" Margin="253,43,0,0" Grid.Row="1" VerticalAlignment="Top" Width="150"
+                Click="SortByCompany_Click"/>
+        <Button Grid.Row="1" Content="Customers From Canada" Margin="428,10,0,0"
+                Click="FromCanada_Click" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150"/>
+        <Button Grid.Row="1" Content="Generate Report" Margin="428,43,0,0"
+                Click="Generate_Click" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150"/>
+    </Grid>
+</Window>
